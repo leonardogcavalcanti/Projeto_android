@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+/*
+
+:root para usar as cores específicas
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{
+    
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #eddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --font-padrao: Arial, Helvetica, sans-serif; 
+    --font-destaque: 'Bebas Neue', 'cursive';
+    --font-android: 'Android', 'cursive';
+}
+
+* { /* Seleção global*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    /* Cores e Fontes*/
+
+    background-color: var(--cor0);
+    font-family: var(--font-padrao);
+}
+
+a.externo::after{
+    content: '\00A0\1F517';
+}
+
+/* Todos os Parágrafos */
+p{
+    /* Margens*/
+
+    /* Distanciando dos H's */
+    margin: 15px 0px;
+
+}
+
+header{
+    /* Cores e Fontes*/
+
+    /* Gradiente linear para baixo da cor1 para a cor4*/
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor4));
+
+    /* Margens*/
+
+    text-align: center; /* Centralizar o texto*/
+    min-height: 100px; /* Altura mínima de 100px*/
+    padding-top: 20px; /* para distanciar do topo*/
+
+}
+
+/* h1 dentro de header */
+header > h1{
+    /* Cores do texto e Fontes*/
+
+    color: white;
+    font-family: var(--font-destaque);
+    font-size: 3em; /* Tamanho da fonte*/
+
+    /* Sombreamento*/
+
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.716);
+
+    /* Margens*/
+
+    margin-bottom: 10px; /* para distanciar do <p>*/
+
+
+
+}
+
+ /* p dentro de header */
+header > p{
+    /* Cores do texto e Fontes*/
+
+    color: white;
+    font-size: 1.2em; 
+
+    /* Sombreamento*/
+
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.716);
+
+    /* Margens*/
+
+    max-width: 600px; /* Virou um bloco*/
+    margin: auto; /* Corrigindo o max-width deixando a margin em automático*/
+    /* paddins para quando diminuir a tela a letra não ficar colada nas laterais*/
+    padding-left: 10px;
+    padding-right: 10px;
+    /* Para distanciar do Menu */
+    padding-bottom: 20px;
+}
+
+/*  Menu */
+nav{
+    /* Cores do texto e Fontes*/
+
+    background-color: var(--cor5);
+    font-weight: bold;
+
+    /* Margens*/
+
+    padding: 10px;
+
+    /* Sombreamento*/
+
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 0.716);
+}
+
+/*  a dentro de nav - Links do Menu */
+nav > a{
+    /* Cores do texto e Fontes*/
+
+    color: white;
+    text-decoration: none; /* Tirando a decoração do link*/
+
+    /* Margens*/
+
+    padding: 10px;
+
+    /* Suavizando a estética */
+
+    transition-duration: 0.5s;
+
+}
+
+/*  Quando passar o mouse no link que está dentro de nav */
+nav > a:hover{
+    /* Cores do texto e Fontes*/
+
+    /*  Cor de fundo */
+    background-color: var(--cor3);
+    /*  cor do texto*/
+    color: black;
+
+    /* Suavizando a estética */
+
+    /* Bolheando a imagem do fundo */
+    border-radius: 5px;
+
+}
+
+main{
+    /* Cores do texto e Fontes*/
+
+    background-color: white;
+
+    /* Margens*/
+
+    min-width: 300px;
+    max-width: 1000px;
+    
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px; /* para distanciar das bordas*/
+
+    /* Sombreamento*/
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+
+    /* Suavizando a estética */
+
+    /* Bolhear só as bordas de baixo*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+/* h1 dentro de main em qualquer nível */
+main h1{
+    /* Cores do texto e Fontes*/
+
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+}
+
+/* h2 dentro de main em qualquer nível */
+main h2{
+    /* Cores do texto e Fontes*/
+
+    /* estilo da fonte */
+    font-family: var(--font-android);
+    /* Cor do texto */
+    color: var(--cor4);
+    /* Tamanho da fonte */
+    font-size: 1.3em;
+    font-weight: normal;
+    /* Degradê na cor de fundo */
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+
+    /* Margens*/
+    text-indent: 8px;
+
+}
+
+/* Parágrafos dentro de main em qualquer nível */
+main p{
+    /* Tamanho da Fonte */
+    font-size: 1em;
+    /* Justificando */
+    text-align: justify;
+    /* Recuo do parágrafo */
+    text-indent: 30px;
+    /* Distanciamento vertical das linhas */
+    line-height: 2em;
+    
+}
+
+main strong{
+    /* Cor da letra */
+    color: var(--cor4);
+    /* Cor de fundo */
+    background-color: var(--cor0);
+}
+
+main a{
+    /* Tipo de negrito da letra */
+    font-weight: bold;
+    /* Afastar top, bottom de 2px e left, right de 6px */
+    padding: 2px 6px;
+
+    text-decoration: none;
+    color: var(--cor5);
+    background-color: var(--cor0);
+}   
+
+main a:hover{
+    /* Cores do texto e Fontes*/
+
+    color: var(--cor3);
+
+
+    /* Suavizando a estética */
+    text-decoration: underline;
+    
+}
+
+/* img dentro de main em qualquer nível */
+main img{
+    width:100%
+}
+
+/* img.bugdroid dentro de main em qualquer nível */
+main img.bugdroid{
+    /* Margens*/
+
+    /* Largura máxima de 350px */
+    max-width: 350px;
+    /* para a img virar um bloco*/
+    display: block;   
+    /* Ajustar automaticamente */
+    margin: auto;
+
+}
+
+div.video{
+    /* Cores do texto e Fontes*/
+
+    /* Cor de fundo */
+    background-color: var(--cor5);
+
+    /* Margens*/
+
+    /* Da cor de fundo*/
+    margin: 0px, -20px 30px -20px;
+    /* Distanciando das pordas de fundo*/
+    padding: 20px;
+    /* Mexendo nas bordas do vídeo*/
+    padding-bottom: 54%;
+    border-radius: 10px;
+
+
+
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+
+    top: 5%;
+    left: 5%;
+    width:90%;
+    height: 90%;
+
+
+}
+
+aside{
+    /* Cores do texto e Fontes*/
+
+    background-color: var(--cor1);
+
+    /* Margens*/
+
+    /* Distanciando do vídeo acima*/
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+    /* Sombreamento*/
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.502);
+}
+
+aside h3{
+    /* Cores do texto e Fontes*/
+
+    background-color: var(--cor4);
+    color: white;
+
+    /* Margens*/
+
+    padding: 10px;
+    /* Margem negativa, top, right, not bottom and left */
+    margin: -10px -10px 0px -10px; 
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+aside > ul{
+    /* Incluindo um emoji(Não é compatível com todos os navegadores) */
+    list-style-type: '\1F4F2\00A0\00A0'; /* 00A0 = espaço */
+    /* Passando o estilo da lita para inside */
+    list-style-position: inside;
+    /* Passando a única coluna para duas colunas */
+    columns:2;
+}
+
+footer{
+    /* Cores do texto e Fontes*/
+
+    background-color: var(--cor5);
+    color: white;
+    font-size: 0.8em;
+
+    /* Margens*/
+
+    text-align: center;
+    padding: 5px;
+
+}
+
+footer > p > a{
+    /* Cores do texto e Fontes*/
+
+    color: white;
+    font-weight: bolder;
+
+    /* Suavizando a estética */
+
+    text-decoration: none;
+
+}   
+
+footer a:hover{
+    /* Cores do texto e Fontes*/
+
+    color: var(--cor1);
+
+    /* Suavizando a estética */
+
+    text-decoration: underline;
+    
+}
